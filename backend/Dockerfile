@@ -10,6 +10,7 @@ COPY . .
 
 EXPOSE 3000
 
+RUN npm install knex -g
 RUN npm run build
 
-CMD ["npm", "run", "start:prod"]
+CMD ["./run.sh"]
