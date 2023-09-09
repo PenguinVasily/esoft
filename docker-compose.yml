@@ -1,5 +1,5 @@
 services:
-  postgresql:
+  postgres:
     image: postgres:15-alpine
     environment:
       - POSTGRES_DB=esoft
@@ -9,8 +9,10 @@ services:
       - 5432:5432
   backend:
     build: backend/
+    environment:
+      - POSTGRESQL_DSN=postgresql://admin:admin@postgres/esoft
     depends_on:
-      - postgresql
+      - postgres
     ports:
       - 3000:3000
   frontend:
