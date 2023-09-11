@@ -1,10 +1,6 @@
 import {Injectable} from "@nestjs/common";
 import {PostgreSQL} from "../database/postgresql";
 import {Flat} from "./entities/flat.entity";
-import {PaginatedList} from "../common/dto/paginated_list";
-import knex from "knex";
-import QueryBuilder = knex.QueryBuilder;
-
 
 @Injectable()
 export class FlatsRepository {
@@ -76,9 +72,6 @@ export class FlatsRepository {
         query.count()
 
         const total = await query.first()
-
-        //console.log(total.count)
-
         return total.count
     }
 

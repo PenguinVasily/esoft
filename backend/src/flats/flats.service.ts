@@ -1,8 +1,6 @@
-import {HttpException, HttpStatus, Injectable, Query} from '@nestjs/common';
+import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
 import {FlatsRepository} from "./flats.repository";
 import {Flat} from "./entities/flat.entity";
-import {FlatCardDto} from "./dto/card.flat.dto";
-import {FlatDto} from "./dto/flat.dto";
 import {PaginatedList} from "../common/dto/paginated_list";
 
 @Injectable()
