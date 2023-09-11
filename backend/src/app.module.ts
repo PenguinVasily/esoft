@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
+import { FlatsModule } from './flats/flats.module';
+
 @Module({
-  imports: [],
+  imports: [FlatsModule],
   controllers: [],
   providers: [],
 })
