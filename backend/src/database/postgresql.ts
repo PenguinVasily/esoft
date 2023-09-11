@@ -1,5 +1,9 @@
 import {Injectable} from "@nestjs/common";
 import knex, {Knex} from "knex";
+import {configDotenv} from "dotenv";
+
+
+configDotenv({path: '../../../.env'})
 
 
 @Injectable()
@@ -9,7 +13,7 @@ export class PostgreSQL {
     constructor() {
         this.client = knex({
             client: 'postgresql',
-            connection: 'postgresql://admin:admin@localhost:5432/esoft'
+            connection: process.env.POSTGRESQL_DSN
         })
     }
 }
