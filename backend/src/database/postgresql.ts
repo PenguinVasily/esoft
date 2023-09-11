@@ -1,6 +1,5 @@
 import {Injectable} from "@nestjs/common";
 import knex, {Knex} from "knex";
-import process from "process";
 
 
 @Injectable()
